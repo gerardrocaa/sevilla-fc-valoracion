@@ -1,0 +1,52 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large presentation files (not needed for dashboard)
+*.pptx
+
+# LaLiga PDF reports (not needed for dashboard)
+Formación La Liga IA y caso práctico/*.pdf
+
+# Opta XML (not Sevilla data)
+Formación La Liga IA y caso práctico/*.xml
+
+# Excel (not needed at runtime)
+Formación La Liga IA y caso práctico/*.xlsx
+
+# IDE / tool configs
+.agents/
+.claude/
+.context/
+.serena/
+.playwright-mcp/
+skills-lock.json
+
+# Notebooks (analysis only, not dashboard)
+*.ipynb
+
+# Screenshots
+screenshoots/
+
+# Documentation (not needed for deployment)
+CLAUDE.md
+MODULOS.md
