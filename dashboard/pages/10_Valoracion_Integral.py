@@ -46,6 +46,19 @@ st.info(
 # Aviso de datos externos
 # ---------------------------------------------------------------------------
 
+with st.expander("Cómo interpretar esta página"):
+    st.markdown("""
+**Ranking por Score Integral** — Barras horizontales que muestran la nota integral (0-100) de cada jugador, calculada con los pesos que el usuario configura en los sliders. Cambiar los pesos reordena el ranking en tiempo real. Permite responder preguntas como: ¿quién es más valioso si priorizamos el rendimiento deportivo? ¿Y si priorizamos el impacto comercial?
+
+**Desglose por Dimensiones** — Heatmap que muestra la nota de cada jugador en las 5 dimensiones (rendimiento, físico, mercado, comercial, médico). Colores más oscuros indican mayor puntuación. Permite identificar jugadores equilibrados (toda la fila con color similar) frente a jugadores que destacan solo en una dimensión.
+
+**Rendimiento vs Valor de Mercado** — Scatter con cuadrantes que cruza el rendimiento deportivo (eje X) con el valor de mercado en millones (eje Y). Los cuadrantes identifican cuatro tipos de jugador: estrellas (arriba a la derecha), sobrevalorados (arriba a la izquierda), gangas (abajo a la derecha) y desconocidos (abajo a la izquierda).
+
+**Radar de Valoración (Perfil Individual)** — Pentágono con las 5 dimensiones de valoración para un jugador concreto. Muestra de forma visual sus fortalezas y debilidades más allá del rendimiento deportivo: mercado, impacto comercial y salud también cuentan.
+
+**Radar Comparativo** — Dos pentágonos superpuestos que permiten comparar dos jugadores dimensión a dimensión. Útil para decisiones de fichaje o renovación donde hay que elegir entre dos perfiles diferentes.
+""")
+
 valuation_base = load_valuation()
 
 if not has_external_data():

@@ -25,6 +25,19 @@ with st.expander("Glosario de términos"):
         if term in ("ACWR", "Índice de fatiga", "Riesgo de lesión", "IC 95%"):
             st.markdown(f"- **{term}**: {desc}")
 
+with st.expander("Cómo interpretar esta página"):
+    st.markdown("""
+**Evolución del Índice de Fatiga** — Líneas que muestran el índice de fatiga (0 = fresco, 1 = fatigado) de cada jugador partido a partido. Una tendencia ascendente sostenida indica acumulación de fatiga a lo largo de la temporada. Picos repentinos pueden señalar partidos de alta exigencia o recuperación insuficiente entre jornadas.
+
+**Tendencia PSV-99** — Líneas que muestran la velocidad máxima de sprint (PSV-99) por partido. Caídas sostenidas en esta métrica son un indicador de fatiga neuromuscular: el jugador pierde capacidad explosiva. Si la PSV-99 cae mientras la fatiga sube, la señal de alarma es clara.
+
+**Carga Acumulada Total** — Barras horizontales que suman la carga total (distancia + HSR + sprint) de cada jugador a lo largo de los 6 partidos. Jugadores con barras más largas han acumulado más desgaste físico. Junto con el índice de fatiga, ayuda a priorizar quién necesita descanso.
+
+**Semáforo de Riesgo** — Barras coloreadas según el nivel de riesgo de lesión: verde (bajo, < 0,33), amarillo (medio, 0,33-0,66) y rojo (alto, > 0,66). Se basa en ACWR, cambios en PSV-99, picos de carga y variabilidad. Los jugadores en amarillo o rojo son candidatos a rotación o gestión de minutos.
+
+**Factores de Riesgo** — Barras horizontales que desglosan los componentes del riesgo para un jugador concreto: ACWR, cambio de PSV-99, cambio de carga y ratio de sprint. Las barras en rojo indican valores en zona de riesgo. Permite entender qué factor específico está elevando el riesgo de ese jugador.
+""")
+
 # --- Load data ---
 fatigue_df = load_fatigue()
 fatigue_stats = load_fatigue_stats()

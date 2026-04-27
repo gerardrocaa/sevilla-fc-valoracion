@@ -54,6 +54,17 @@ st.info(
     "Los resultados muestran el rango probable, no predicciones puntuales."
 )
 
+with st.expander("Cómo interpretar esta página"):
+    st.markdown("""
+**Ausencia de Jugador** — Simula qué pasa si un jugador no está disponible. Las barras verdes muestran las métricas del equipo con él y las rojas sin él. Una caída grande en las barras rojas indica alta dependencia de ese jugador. La redistribución muestra cómo se reparte su contribución entre compañeros de posición similar.
+
+**Bloque Defensivo** — Compara el rendimiento del equipo según el tipo de bloque defensivo (alto, medio, bajo). Las barras agrupadas muestran pressing, solidez y recuperación para cada bloque. El radar superpone los tres perfiles. El heatmap por partido muestra cuántos eventos defensivos hubo con cada bloque en cada jornada. Permite evaluar qué estrategia defensiva funcionó mejor.
+
+**Rotación Física** — Proyecta la fatiga futura de un jugador con y sin plan de descanso. La línea roja muestra la fatiga sin rotación y la verde con rotación. Las marcas X señalan los partidos de descanso. La diferencia entre el pico rojo y el verde cuantifica cuánta fatiga se evita. La carga acumulada proyectada permite ver el ahorro total a largo plazo.
+
+**Formación Alternativa** — Compara dos formaciones tácticas (por ejemplo, 4-3-3 vs 3-5-2). Los diagramas de campo muestran la disposición de jugadores. El radar y las barras comparan el rendimiento esperado del equipo en las 6 dimensiones con cada formación. Permite tomar decisiones tácticas con base cuantitativa.
+""")
+
 with st.expander("Glosario de terminos"):
     for term, desc in WHATIF_GLOSSARY.items():
         st.markdown(f"- **{term}**: {desc}")

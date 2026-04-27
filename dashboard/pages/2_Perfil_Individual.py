@@ -21,6 +21,19 @@ st.info(
     "en 6 dimensiones, su evolución a lo largo de la temporada y cómo se compara con la media del equipo."
 )
 
+with st.expander("Cómo interpretar esta página"):
+    st.markdown("""
+**Radar por Partido** — Cada polígono representa el perfil del jugador en un partido concreto. Las 6 puntas corresponden a las 6 dimensiones de rendimiento. Un polígono grande y equilibrado indica un jugador completo ese día; uno deformado señala fortalezas y debilidades claras. Superponer varios partidos revela si el jugador mantiene su perfil o varía mucho.
+
+**vs Media del Equipo** — Compara el perfil del jugador (rojo) con la media de toda la plantilla (gris). Las dimensiones donde el jugador sobresale por fuera del gris son sus fortalezas relativas al equipo. Donde queda por dentro, está por debajo de la media.
+
+**Evolución Temporal** — Línea que muestra cómo varía la nota del jugador partido a partido. Una línea ascendente indica mejora progresiva. Caídas bruscas pueden señalar fatiga, lesión o un rival especialmente exigente. La estabilidad de la línea refleja la consistencia del jugador.
+
+**Dimensiones vs Media Equipo** — Barras agrupadas que comparan las 6 dimensiones del jugador con la media del equipo, una junto a otra. Es la versión numérica exacta del radar: permite cuantificar cuánto por encima o por debajo de la media está en cada aspecto.
+
+**Heatmap Posicional** — Mapa de calor sobre el campo de fútbol que muestra dónde realizó más acciones el jugador. Las zonas rojas indican alta actividad. Permite verificar si el jugador ocupa las zonas esperadas según su posición o si tiende a desplazarse a otras áreas.
+""")
+
 scores_all = load_scores()
 aggregated = load_aggregated()
 

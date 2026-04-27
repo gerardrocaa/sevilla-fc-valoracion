@@ -23,6 +23,17 @@ with st.expander("¿Qué significan estas métricas?"):
     for term, desc in PHYSICAL_GLOSSARY.items():
         st.markdown(f"- **{term}**: {desc}")
 
+with st.expander("Cómo interpretar esta página"):
+    st.markdown("""
+**Comparación por Métrica** — Barras horizontales que muestran el valor de la métrica física seleccionada para cada jugador. Las barras más largas indican mayor rendimiento en esa métrica. Cambiar entre M/min, HSR, Sprint o PSV-99 permite ver quién lidera en cada aspecto físico.
+
+**Heatmap Físico** — Mapa de calor que cruza jugadores con varias métricas físicas normalizadas de 0 a 1. Colores más intensos significan valores más altos respecto al grupo. Permite identificar perfiles físicos de un vistazo: un jugador con toda la fila intensa es un atleta completo; uno con solo una columna intensa es especialista.
+
+**Intensidad vs Alta Velocidad** — Scatter que cruza metros por minuto (eje X) con distancia a alta velocidad HSR (eje Y). Los jugadores arriba a la derecha combinan alta intensidad general con mucha carrera a alta velocidad. Los que están abajo a la derecha corren mucho pero a ritmo bajo. Los de arriba a la izquierda hacen menos volumen pero con picos de velocidad.
+
+**Sprint vs Agilidad** — Scatter que cruza distancia de sprint (eje X) con cambios de dirección (eje Y). Un jugador arriba a la derecha es explosivo y ágil: sprinta mucho y cambia de dirección frecuentemente. Este perfil es típico de extremos y laterales ofensivos. Centrales y mediocentros suelen aparecer más abajo a la izquierda.
+""")
+
 aggregated = load_aggregated()
 physical = load_physical_raw()
 

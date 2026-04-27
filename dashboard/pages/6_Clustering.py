@@ -23,6 +23,15 @@ with st.expander("Glosario de términos"):
         if term in ("Cluster", "PCA", "Silhouette"):
             st.markdown(f"- **{term}**: {desc}")
 
+with st.expander("Cómo interpretar esta página"):
+    st.markdown("""
+**Mapa de Clusters (PCA)** — Cada punto es un jugador proyectado en dos dimensiones mediante PCA. Los colores indican el cluster asignado. Jugadores cercanos en el gráfico tienen perfiles de rendimiento similares. Si dos jugadores de posiciones distintas caen en el mismo cluster, comparten características de juego aunque ocupen zonas diferentes del campo.
+
+**Perfil Promedio por Cluster** — Radar que muestra los valores medios de las 6 dimensiones para cada cluster. Permite definir la identidad de cada grupo: uno puede ser el cluster ofensivo-físico (alto en amenaza y físico) y otro el defensivo-retentivo (alto en defensa y retención de balón). Las diferencias de forma entre radares revelan qué separa a los grupos.
+
+**Mapa de Calor: Jugadores x Dimensiones** — Heatmap con los jugadores en filas (ordenados por cluster) y las 6 dimensiones en columnas. Verde indica score alto, rojo indica score bajo. Permite ver visualmente los patrones que definen cada cluster: bloques de color similares dentro de un mismo grupo confirman que la agrupación es coherente.
+""")
+
 # --- Load data ---
 clustering = load_clustering()
 labels_df = clustering["labels_df"]

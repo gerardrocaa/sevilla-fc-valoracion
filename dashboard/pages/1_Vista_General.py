@@ -20,6 +20,19 @@ st.info(
     "progresión, amenaza, movimiento sin balón, defensa, físico y retención del balón."
 )
 
+with st.expander("Cómo interpretar esta página"):
+    st.markdown("""
+**Ranking General** — Barras horizontales ordenadas de mayor a menor nota global (0 a 1). El color indica la posición del jugador en el campo. Permite identificar de un vistazo quiénes son los jugadores con mejor rendimiento agregado en los 6 partidos analizados.
+
+**Scores por Jugador y Jornada** — Mapa de calor donde cada celda cruza un jugador con una jornada. Verde oscuro indica buen rendimiento, rojo indica rendimiento bajo. Sirve para detectar irregularidades: un jugador con muchas celdas verdes es consistente; columnas enteras en rojo señalan partidos donde todo el equipo rindió mal.
+
+**Evolución Media del Equipo** — Línea que muestra la nota media del equipo partido a partido. Si la línea desciende a lo largo de la temporada, el rendimiento colectivo empeora. Si sube, mejora. Los picos y valles revelan en qué jornadas el equipo estuvo mejor o peor como bloque.
+
+**Desglose por Dimensión y Jornada** — Barras apiladas que muestran cuánto aporta cada dimensión (progresión, amenaza, movimiento sin balón, defensa, físico, retención) a la nota total en cada jornada. Si una dimensión desaparece en un partido concreto, indica que el equipo falló en ese aspecto del juego ese día.
+
+**Top-5 por Dimensión** — Seis subgráficos (uno por dimensión) que muestran los 5 mejores jugadores en cada aspecto. Útil para identificar especialistas: quién es el mejor progresando con balón, quién defiende mejor, quién tiene mayor contribución física, etc.
+""")
+
 scores_all = load_scores()
 aggregated = load_aggregated()
 

@@ -20,6 +20,19 @@ st.info(
     "Selecciona al menos 2 jugadores en el panel lateral para ver sus diferencias en las 6 dimensiones."
 )
 
+with st.expander("Cómo interpretar esta página"):
+    st.markdown("""
+**Radar Superpuesto** — Varios polígonos superpuestos, uno por jugador seleccionado. Permite ver de un vistazo quién domina en qué dimensiones. El jugador con el polígono más grande tiene mejor rendimiento general; las diferencias de forma revelan perfiles complementarios o redundantes.
+
+**Scatter Configurable** — Cada punto es un jugador. Los ejes se pueden configurar libremente. La posición arriba a la derecha es la mejor en ambas métricas. Útil para cruzar variables como minutos jugados vs rendimiento, o dimensión física vs defensiva, y detectar outliers.
+
+**Comparación por Dimensión** — Barras agrupadas que muestran las 6 dimensiones de cada jugador lado a lado. Permite comparar numéricamente en qué dimensiones uno supera al otro. Ideal para decidir entre dos jugadores que compiten por un puesto.
+
+**Consistencia** — Diagrama de caja (boxplot) que muestra la dispersión de notas de cada jugador a lo largo de los partidos. Una caja pequeña indica un jugador predecible y estable. Una caja grande con bigotes largos indica alta variabilidad: puede brillar un día y desaparecer al siguiente.
+
+**Evolución** — Líneas superpuestas que muestran la trayectoria de cada jugador partido a partido. Permite ver si sus rendimientos se mueven en paralelo (afectados por el mismo contexto de equipo) o de forma independiente. Los cruces de líneas señalan cambios de jerarquía entre jornadas.
+""")
+
 scores_all = load_scores()
 aggregated = load_aggregated()
 

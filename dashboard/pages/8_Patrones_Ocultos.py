@@ -24,6 +24,15 @@ with st.expander("Glosario de términos"):
         if term in ("Correlación", "IC 95%", "p-valor"):
             st.markdown(f"- **{term}**: {desc}")
 
+with st.expander("Cómo interpretar esta página"):
+    st.markdown("""
+**Matriz de Correlaciones** — Mapa de calor que muestra la correlación de Spearman entre pares de variables. Rojo indica correlación positiva (cuando una sube, la otra también), azul indica correlación negativa (cuando una sube, la otra baja). El asterisco (*) marca las correlaciones estadísticamente significativas (p < 0,05). Valores cercanos a +1 o -1 son relaciones fuertes.
+
+**Forest Plot (IC 95%)** — Cada diamante representa una correlación con su intervalo de confianza al 95%. Si el intervalo horizontal cruza la línea del cero, la correlación no es estadísticamente significativa. Los diamantes rojos son significativos y los grises no. Cuanto más lejos del cero esté el diamante, más fuerte es la relación.
+
+**Detalle de Correlación (Scatter)** — Gráfico de dispersión que muestra los datos crudos detrás de una correlación seleccionada, con una línea de regresión superpuesta. Permite verificar visualmente si la relación es lineal, si hay outliers que distorsionan el resultado, o si la correlación es genuina. Se muestra el coeficiente r y el p-valor.
+""")
+
 # --- Load data ---
 corr_df = load_correlations()
 dynamic_sev = load_dynamic()

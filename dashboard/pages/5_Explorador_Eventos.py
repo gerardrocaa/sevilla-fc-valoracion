@@ -27,6 +27,17 @@ with st.expander("¿Qué significan estos términos?"):
     for term, desc in EVENT_GLOSSARY.items():
         st.markdown(f"- **{term}**: {desc}")
 
+with st.expander("Cómo interpretar esta página"):
+    st.markdown("""
+**Heatmap en Campo** — Mapa de calor sobre el terreno de juego que muestra las zonas donde el jugador realizó más acciones. Las zonas rojas indican alta concentración de eventos. Permite verificar si un jugador actúa donde se espera según su posición o si se desplaza a zonas atípicas.
+
+**Distribución de Presión** — Barras agrupadas que muestran cuántas acciones se realizaron bajo cada nivel de presión rival (baja, media, alta, muy alta). Un jugador con muchas acciones bajo presión alta es valiente con balón y capaz de tomar decisiones en contextos exigentes. Si la mayoría de sus acciones son bajo presión baja, recibe el balón en situaciones cómodas.
+
+**Desglose por Fase** — Gráfico de dona que muestra la proporción de acciones según la fase de juego: build-up (construcción desde atrás), create (creación de peligro) y direct (juego directo). Un centrocampista debería tener mucho build-up; un delantero, más create y direct.
+
+**Frecuencia de Subtipos** — Barras horizontales con los tipos de acción más frecuentes: pressing, overlap, support, recovery press, etc. Permite entender el rol táctico real del jugador más allá de su posición nominal. Si un delantero tiene mucho pressing, contribuye defensivamente; si un defensa tiene muchos overlaps, se proyecta al ataque.
+""")
+
 aggregated = load_aggregated()
 dynamic_sev = load_dynamic()
 
